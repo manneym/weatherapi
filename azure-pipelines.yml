@@ -23,7 +23,9 @@ stages:
     - task: Docker@2
       displayName: Building and Pushing an image
       inputs:
-        command: buildAndPush
+        containerRegistry: 'manneymc Docker Hub'
+        repository: 'manneymc/weatherapi'
+        command: 'buildAndPush'
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
